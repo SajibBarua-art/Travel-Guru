@@ -1,0 +1,14 @@
+.transport-card img {
+    width: 200px;
+    margin-bottom: 30px;
+}
+.transport-card {
+    background-color: lightgrey;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.transport-card h3 {
+    text-align: center;
+}
