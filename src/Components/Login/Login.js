@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
-import { createUserWithEmailAndPassword, handleGoogleSignIn, handleSignOut, initializeLoginFramework, signInWithEmailAndPassword } from './loginManager';
+import { createUserWithEmailAndPassword, handleGoogleSignIn, initializeLoginFramework, signInWithEmailAndPassword } from './loginManager';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 import { Link } from 'react-router-dom';

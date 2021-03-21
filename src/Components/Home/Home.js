@@ -6,7 +6,7 @@ const Home = () => {
     const [transportsType, setTransportsType] = useState([]);
     useEffect(() => {
         setTransportsType(transportsFakeData);
-    }, [])
+    }, [transportsType])
     return (
         <div>
             <h2 className="text-center info mt-5">Click your favorite transportation type</h2>

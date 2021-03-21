@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './SetDestination.css';
-import ReactMapGL from 'react-map-gl';
+// import ReactMapGL from 'react-map-gl';
 import TransportationDetails from '../Components/TransportationDetails/TransportationDetails';
 
 const SetDestination = () => {

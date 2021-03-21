@@ -21,7 +21,6 @@ export const handleGoogleSignIn = () => {
                 success: true
             }
             return signedInUser;
-            console.log(displayName, photoURL, email);
         })
         .catch(err => {
             console.log(err);
@@ -39,7 +38,6 @@ export const handleSignOut = () => {
                 email: ''
             }
             return signedOutUser;
-            console.log(res);
         })
         .catch((error) => {
             console.log("Sign out error!");
