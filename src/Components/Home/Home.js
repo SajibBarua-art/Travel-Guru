@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import transportsFakeData from '../../transportsFakeData.json';
-import Transport from '../Transport/Transport';
+import Transport from '../SelectedTransport/SelectedTransport';
 
 const Home = () => {
     const [transportsType, setTransportsType] = useState([]);
@@ -9,10 +9,11 @@ const Home = () => {
     }, [])
     return (
         <div>
-            <h2 className="text-center info mt-5">Select your favorite transportation type</h2>
+            <h2 className="text-center info mt-5">Click your favorite transportation type</h2>
             <div className="d-flex flex-wrap justify-content-center">
                 {
                     transportsType.map(transport => <Transport
+                        key={transport.name}
                         transport={transport}
                     ></Transport>)
                 }

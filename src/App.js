@@ -1,24 +1,23 @@
 import './App.css';
-import firebase from "firebase/app";
-import "firebase/analytics";
-import firebaseConfig from './Components/Login/firebase.config';
-
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import SetDestination from './SetDestination/SetDestination';
+import { createContext, useState } from 'react';
+import NotFound from './Components/NotFound/NotFound';
 
-// if(!firebaseConfig.apps.length) {
-//   firebase.initializeApp(firebaseConfig);
-// }
+export const UserContext = createContext();
+
 function App() {
+  const [logInState, setLogInState] = useState({});
   return (
-    <div>
+    <UserContext.Provider value={[logInState, setLogInState]}>
       <Router>
         <Header></Header>
         <Switch>
@@ -28,12 +27,18 @@ function App() {
           <Route exact path='/'>
             <Home></Home>
           </Route>
-          {/* <Route path='/login'>
+          <Route path='/login'>
             <Login></Login>
-          </Route> */}
+          </Route>
+          <PrivateRoute path='/setDestination'>
+            <SetDestination></SetDestination>
+          </PrivateRoute>
+          <Route path='*'>
+            <NotFound></NotFound>
+          </Route>
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 
